@@ -6,28 +6,28 @@ import Miembro from './models/Monigote.js';
 export const typeDefs = gql`
 
     type Estilos {
-        background: String
-        border_radius: String
-        margin: String
+        background: String!
+        borderRadius: String!
         transform: String
     }
 
     type Miembro {
+        id:ID!
         nombre: String
         estilos: Estilos
     }
 
     type Query {
-        miembros(nombre:[String]!): [Miembro]
+        miembros(nombre:[String]): [Miembro]
         miembro(nombre:String!): Miembro
+        monigote: [Miembro]
     }
 
     type Mutation {
         agregarMiembro(
-            nombre: String
-            background: String
-            border_radius: String
-            margin: String
+            nombre: String!
+            background: String!
+            borderRadius: String!
             transform: String
         ):Miembro
     }
@@ -42,13 +42,18 @@ export const resolvers = {
         miembros: async(root, args) => {
             return await Miembro.find({ nombre: { $in: args.nombre } });
 
-        } 
+        },
+
+        monigote: async() => {
+            return await Miembro.find({});
+
+        }
     },
 
     Mutation: {
         agregarMiembro: (root, args ) => {
-            const { nombre, background, border_radius, margin, transform } = args;
-            const miembro = new Miembro( { nombre, background, border_radius, margin, transform } );
+            const { nombre, background, borderRadius, transform } = args;
+            const miembro = new Miembro( { nombre, background, borderRadius, transform } );
             return miembro.save();
         },
     },
@@ -57,8 +62,7 @@ export const resolvers = {
         estilos: ( root ) => {
             return {
                 background: root.background,
-                border_radius: root.border_radius,
-                margin: root.margin,
+                borderRadius: root.borderRadius,
                 transform: root.transform
             }
         }

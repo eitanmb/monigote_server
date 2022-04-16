@@ -10,13 +10,9 @@ const miembroSchema = new mongoose.Schema( {
         type: String,
         require:true
     },
-    border_radius: {
+    borderRadius: {
         type: String,
         require:true
-    },
-    margin: {
-        type: String,
-        require:false
     },
     transform: {
         type: String,
