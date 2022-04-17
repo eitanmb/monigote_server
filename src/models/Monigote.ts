@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
+import { IMiembro } from '../types';
 
-const miembroSchema = new mongoose.Schema( {
+const miembroSchema = new mongoose.Schema<IMiembro>( {
     nombre: {
         type: String,
         unique: true,
@@ -20,9 +21,6 @@ const miembroSchema = new mongoose.Schema( {
     }
 });
 
-
-export default mongoose.model('Miembro', miembroSchema );
-
-
-
-
+const Miembro = mongoose.model<IMiembro>('Miembro', miembroSchema );
+export default Miembro;
+// export default mongoose.model('Miembro', miembroSchema );
