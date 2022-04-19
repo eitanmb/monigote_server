@@ -45,6 +45,7 @@ dist
 ### Introducir la informacion del Monigote en la base de datos
 
 - Ejectuar la siguiente mutación de GraphQL:
+
     `mutation($nombre: String!, $background: String!, $borderRadius: String!, $transform: String) {
         agregarMiembro(nombre: $nombre, background: $background, borderRadius: $borderRadius, transform: $transform) {
             id
@@ -59,7 +60,8 @@ dist
 
     Con las variables:
 
-    1. `
+    1. 
+    `
         {
             "nombre": "head",
             "background": "#68cc83",
@@ -67,7 +69,8 @@ dist
         }
         `
 
-    2.  `
+    2.  
+    `
         {
             "nombre": "lArm",
             "background": "#68cc83",
@@ -76,7 +79,8 @@ dist
         }
         `
 
-    3. `
+    3. 
+    `
         {
             "nombre": "rArm",
             "background": "#68cc83",
@@ -85,7 +89,8 @@ dist
         }
         `
 
-    4. `
+    4. 
+    `
         {
             "nombre": "lLeg",
             "background": "#68cc83",
@@ -94,7 +99,8 @@ dist
         }
      `
 
-    5. `
+    5. 
+    `
         {
             "nombre": "rLeg",
             "background": "#68cc83",
@@ -103,7 +109,8 @@ dist
         }
         `
 
-    6. `
+    6. 
+    `
         {
             "nombre": "body",
             "background": "#68cc83",
