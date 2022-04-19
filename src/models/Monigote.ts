@@ -23,4 +23,3 @@ const miembroSchema = new mongoose.Schema<IMiembro>( {
 
 const Miembro = mongoose.model<IMiembro>('Miembro', miembroSchema );
 export default Miembro;
-// export default mongoose.model('Miembro', miembroSchema );
