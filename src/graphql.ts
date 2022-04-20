@@ -1,7 +1,8 @@
 import { gql } from 'apollo-server';
+
 import './db/dbConnection.js';
-import Miembro from './models/Monigote';
 import { IMiembro, IEstilos } from './types.js';
+import Miembro from './models/Monigote';
 
 export const typeDefs = gql`
 
