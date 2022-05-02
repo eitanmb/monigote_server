@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server';
 
-import './db/dbConnection.js';
+import './db/dbConnection';
 import { IMiembro, IEstilos } from './types.js';
 import Miembro from './models/Monigote';
 
